@@ -1,0 +1,311 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Lembrar de resetar todas as margens e paddings com *{    */
+#t1{
+    text-align: center;
+}
+body{
+    justify-items: center;
+}
+.detalhe{
+     background-color: brown;
+     width: 30px;
+     height: 10px;
+     display: inline-block;
+     position: absolute;
+     left:10px;
+     top: 5px;
+}
+header{
+    /* ou usar
+    Display:flex;
+    gap: 20px;
+    */
+    text-align: center;
+    padding-bottom: 70px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-self: center;
+    gap: 80px;
+}
+
+.grid1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+/* gap: 10px 20px; define a distancia das linhas e colunas respectivamente */
+    gap: 25px;
+    align-items: center;
+    height: 400px; 
+    grid-template-rows: repeat(3, 1fr);
+    margin: 0px auto;
+/* position relative detalhe ficara de acordo com o posicionamento desse grid */
+    position: relative;
+    max-width: 1000px;
+}
+
+
+#info{
+    display: grid;
+    text-align: end;
+    margin: 10px;
+    gap: 0px;
+    line-height: 1.3;
+    max-height: 400px;
+    
+}
+/* Top / Right( Direita ) / Bottom / Left ( Esquerda ) */
+#info h1 {
+    margin: 0px 0px 10px 0px;
+}
+
+
+#see{
+    background-color: brown;
+    padding: 10px 20px;
+    color: aliceblue;
+    border-radius: 5px;
+    text-decoration: none;
+
+    display: grid;
+    justify-self: end;
+    margin-top: 10px;
+}
+a#see{
+    gap: 0;
+    transition: 0.3s;
+}
+a#see:hover{
+    background-color: rgb(104, 26, 26);
+}
+a#see::before{
+    content: none;
+}
+.cover img{
+
+    width: 100%;
+    height: 100%;
+    grid-column: 2;
+}
+#svg{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding-left: 3px;
+}
+/* Alinhando o icone SVG com o texto */
+.moto{
+    display: flex;
+    align-self: center;
+    flex-wrap: wrap;
+    grid-column: 2;
+    transition: 0.3s;
+
+}
+.moto:hover{
+    border-left: 10px solid rgb(145, 3, 3);
+    padding-left: 10px;
+}
+.moto2{
+    display: flex;
+    align-self: flex-start;
+    flex-wrap: wrap;
+    grid-column: 2; 
+    transition: 0.3s;
+}
+.moto2:hover{
+    border-left: 10px solid rgb(145, 3, 3);
+    padding-left: 10px;
+}
+.moto3{
+    display: flex;
+    align-self: flex-end;
+    flex-wrap: wrap;
+    grid-column: 2;
+    transition: 0.3s;
+}
+.moto3:hover{
+    border-left: 10px solid rgb(145, 3, 3);
+    padding-left: 10px;
+}
+.grid2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3,1fr);
+    align-items: start;
+    padding-top: 5px;
+    margin: 0px auto;
+    column-gap: 75px;
+    max-width: 650px;
+}
+
+
+.grid2 h4{
+    margin: 0;
+    padding: 0;
+}
+.grid2 h1{
+    margin: 0;
+    padding: 0;
+}
+
+
+.desc1{
+    grid-column: 1;
+    grid-row: 2/3;
+    display: flex;
+
+}
+.desc2{
+    display: flex;
+}
+.van{
+    text-align: end;
+    grid-column: 1;
+    grid-row: 2/3;
+    font-size: 50px;
+}
+.van h1{
+    margin: 0;
+    padding: 0;
+}
+
+footer{
+    margin-top: 100px;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    border: 2px solid rgb(255, 255, 255);
+    display: flex;
+    align-items: start;
+    gap: 3px;
+}
+
+a::before{
+    content: '';
+    display: inline-block;
+    background-color: brown;
+    width: 10px;
+    height: 5px;
+    opacity: 0;
+    transition:0.3s;
+}
+
+a:hover::before{
+    opacity: 1;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+body{
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@media ( max-width:600px){
+    header{
+        gap:20px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+    .cover img{
+        align-self: center;
+        width: 80%;
+    }
+    .grid1{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #info{
+        text-align: center;
+    }
+    #see{
+        display: grid;
+        justify-self: center;
+        margin-top: 10px;
+    }
+    
+    .grid2{
+        margin-top: 360px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        max-height: 400px;
+    }
+    .moto{
+        align-content: center;
+        max-height: max-content;
+    }
+    h1.van{
+        margin-top: 40px;
+        text-align: center;
+    }
+    .detalhe{
+        display: none;
+    }
+    h1#t1{
+        margin: 0px;
+    }
+}
+@media ( max-width:770px){
+    header{
+        gap:20px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+    div.cover{
+        align-self: center;
+        
+    }
+    .cover img{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .grid1{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #info{
+        text-align: center;
+    }
+    #see{
+        display: grid;
+        justify-self: center;
+        margin-top: 10px;
+    }
+    
+    .grid2{
+        margin-top: 250px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        max-height: 400px;
+    }
+    .moto{
+        align-content: center;
+        max-height: max-content;
+    }
+    h1.van{
+        margin-top: 40px;
+        text-align: center;
+    }
+    .detalhe{
+        display: none;
+    }
+    h1#t1{
+        margin: 0px;
+    }
+}
